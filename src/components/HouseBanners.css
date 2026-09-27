@@ -1,0 +1,68 @@
+.house-allegiances { margin-bottom: 34px; }
+.house-banners { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.house-banner { position: relative; display: flex; align-items: center; gap: 28px; min-width: 0; margin: 0; padding: 28px 32px; border: 1px solid var(--line); background: #151414; overflow: hidden; }
+.house-banner::after { content: ''; position: absolute; inset: 8px; border: 1px solid #c5a56a1c; pointer-events: none; }
+.house-banner-targaryen { background: radial-gradient(ellipse at 10% 70%, #802e2524, transparent 72%), #151111; }
+.house-banner-stark { background: radial-gradient(ellipse at 10% 70%, #8cabb31a, transparent 72%), #121617; }
+.house-banner-art { position: relative; flex: 0 0 auto; isolation: isolate; }
+.house-banner img { position: relative; width: 94px; height: 104px; object-fit: contain; filter: drop-shadow(0 8px 12px #0005); }
+.house-atmosphere { position: absolute; inset: -22px; pointer-events: none; z-index: -1; }
+.house-atmosphere::before, .house-atmosphere::after { content: ''; position: absolute; inset: 0; border-radius: 50%; animation-play-state: paused; }
+.house-banner-targaryen .house-atmosphere::before { background: radial-gradient(ellipse, #d76f3a66 12%, #b33b252e 44%, transparent 72%); animation: house-ember-breath 8s ease-in-out infinite paused; }
+.house-banner-targaryen .house-atmosphere::after { background: radial-gradient(circle at 13% 66%, #e69156 0 1px, transparent 2px), radial-gradient(circle at 85% 78%, #d66538 0 1px, transparent 2px), radial-gradient(circle at 24% 28%, #e89b6633 0 1px, transparent 2px), radial-gradient(circle at 75% 18%, #e89b66 0 1px, transparent 2px); animation: house-embers-rise 9s ease-in-out infinite paused; }
+.house-banner-stark .house-atmosphere::before { background: radial-gradient(ellipse, #a4d7e536 12%, #8bb2c31c 46%, transparent 72%); animation: house-frost-breath 10s ease-in-out infinite paused; }
+.house-banner-stark .house-atmosphere::after { background: linear-gradient(120deg, transparent 35%, #c6e5ef18 46%, #dff4f92b 50%, transparent 63%); animation: house-frost-drift 12s ease-in-out infinite paused; }
+.motion-enabled .house-banner.is-ambient-visible .house-atmosphere::before, .motion-enabled .house-banner.is-ambient-visible .house-atmosphere::after { animation-play-state: running; }
+.house-banner figcaption { position: relative; min-width: 0; }
+.house-banner-label { display: block; color: var(--muted); font-size: 8px; letter-spacing: 2.5px; margin-bottom: 4px; }
+.house-banner h3 { font-family: var(--display); font-size: clamp(20px, 2.4vw, 30px); font-weight: 500; line-height: 1.25; margin: 0 0 7px; color: var(--paper); }
+.house-words { color: #dc9c82; font-size: 10px; line-height: 1.6; letter-spacing: 1.4px; text-transform: uppercase; margin: 0; }
+.house-banner-stark .house-words { color: #b6cbd2; }
+.house-personal-note { color: var(--muted); font-size: 11px; line-height: 1.6; margin: 9px 0 0; }
+.house-credits { color: var(--muted); font-size: 10px; line-height: 1.8; margin-top: 13px; max-width: 880px; }
+.house-credits summary { cursor: pointer; width: fit-content; padding: 8px 0; text-underline-offset: 4px; }
+.house-credits summary:hover { color: var(--accent); }
+.house-credits summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.house-credits p { margin: 4px 0 0; }
+.house-credits a { color: var(--paper); text-underline-offset: 3px; }
+
+@keyframes house-ember-breath {
+  0%, 100% { opacity: .38; transform: scale(.9) translateY(4px); }
+  50% { opacity: .8; transform: scale(1.12) translateY(-3px); }
+}
+@keyframes house-embers-rise {
+  0%, 100% { opacity: .2; transform: translateY(9px); }
+  50% { opacity: .72; transform: translateY(-11px); }
+}
+@keyframes house-frost-breath {
+  0%, 100% { opacity: .32; transform: scale(.95); }
+  50% { opacity: .7; transform: scale(1.12); }
+}
+@keyframes house-frost-drift {
+  0%, 100% { opacity: .15; transform: translate(-12px, 6px) rotate(-8deg); }
+  50% { opacity: .7; transform: translate(13px, -5px) rotate(5deg); }
+}
+.cinema-site:not(.motion-enabled) .house-atmosphere::before, .cinema-site:not(.motion-enabled) .house-atmosphere::after { animation: none; opacity: .35; }
+@media (prefers-reduced-motion: reduce) {
+  .house-atmosphere::before, .house-atmosphere::after { animation: none !important; opacity: .35; }
+}
+
+@media (max-width: 900px) {
+  .house-banner { padding: 24px; gap: 17px; }
+  .house-banner img { width: 70px; height: 78px; }
+  .house-banner h3 { font-size: 21px; }
+}
+@media (max-width: 620px) {
+  .house-allegiances { margin-bottom: 25px; }
+  .house-banners { grid-template-columns: 1fr; gap: 14px; }
+  .house-banner { padding: 24px; gap: 24px; }
+  .house-banner img { width: 76px; height: 84px; }
+  .house-banner h3 { font-size: 23px; }
+  .house-words { font-size: 9px; letter-spacing: 1px; }
+}
+@media (max-width: 370px) {
+  .house-banner { gap: 17px; padding: 20px; }
+  .house-banner img { width: 64px; height: 71px; }
+  .house-banner h3 { font-size: 20px; }
+  .house-personal-note { font-size: 10px; }
+}

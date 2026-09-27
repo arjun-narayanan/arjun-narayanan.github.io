@@ -1,0 +1,46 @@
+.fantasy-atmosphere { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.atmosphere-winter { z-index: -2; }
+.atmosphere-mist { position: absolute; left: -18%; width: 136%; height: 36%; bottom: 31%; opacity: .16; background: radial-gradient(ellipse at 45% 55%, #acc4d22e, transparent 66%); animation: got-mist-drift 24s ease-in-out infinite alternate paused; }
+.atmosphere-mist-near { bottom: 13%; left: -25%; height: 27%; opacity: .11; background: radial-gradient(ellipse at 65% 45%, #b7c9cd33, transparent 64%); animation-duration: 31s; animation-delay: -12s; animation-direction: alternate-reverse; }
+.atmosphere-glow { position: absolute; inset: 4% -12% 30% 20%; opacity: .13; background: radial-gradient(ellipse at 68% 46%, #d851221f, transparent 66%); animation: got-fire-breath 9s ease-in-out infinite paused; }
+.atmosphere-winter .atmosphere-glow { inset: 5% -12% 40%; background: radial-gradient(ellipse at 56% 35%, #b7dfe526, transparent 58%); animation-name: got-moon-halo; animation-duration: 14s; }
+.atmosphere-winter .atmosphere-mist-far { bottom: 43%; height: 28%; background: radial-gradient(ellipse at 50% 55%, #d4e6ed66, transparent 69%); }
+.atmosphere-winter .atmosphere-mist-near { bottom: 28%; background: radial-gradient(ellipse at 50% 50%, #a6c5d555, transparent 67%); }
+.atmosphere-particles { position: absolute; inset: 0; }
+.atmosphere-particles > i { position: absolute; left: var(--particle-x); bottom: 7%; width: var(--particle-size); height: var(--particle-size); border-radius: 50%; opacity: 0; background: #efb16f; box-shadow: 0 0 6px #cf6b2b80; animation: got-ember-flight var(--particle-duration) linear var(--particle-delay) infinite paused; }
+.atmosphere-winter .atmosphere-particles > i { bottom: auto; top: -12px; background: #e1edf0; box-shadow: none; animation-name: got-winter-snow; }
+.motion-enabled [data-ambient-scene].is-ambient-visible .fantasy-atmosphere > span,
+.motion-enabled [data-ambient-scene].is-ambient-visible .atmosphere-particles > i { animation-play-state: running; }
+
+@keyframes got-mist-drift {
+  from { transform: translate3d(-4%, 0, 0) scale(1); opacity: .18; }
+  to { transform: translate3d(7%, -8px, 0) scale(1.08); opacity: .56; }
+}
+@keyframes got-fire-breath {
+  0%, 100% { transform: scale(1); opacity: .12; }
+  50% { transform: scale(1.05); opacity: .65; }
+}
+@keyframes got-moon-halo {
+  from { transform: translate3d(-1%, 0, 0); opacity: .25; }
+  50% { transform: translate3d(1%, 2%, 0); opacity: .6; }
+  to { transform: translate3d(-1%, 0, 0); opacity: .25; }
+}
+@keyframes got-ember-flight {
+  0% { transform: translate3d(0, 0, 0); opacity: 0; }
+  12% { opacity: .75; }
+  70% { opacity: .32; }
+  100% { transform: translate3d(var(--particle-drift), -650px, 0); opacity: 0; }
+}
+@keyframes got-winter-snow {
+  0% { transform: translate3d(0, 0, 0); opacity: 0; }
+  8% { opacity: .64; }
+  75% { opacity: .48; }
+  100% { transform: translate3d(var(--particle-drift), 530px, 0); opacity: 0; }
+}
+
+@media (max-width: 620px) {
+  .atmosphere-particles > i:nth-child(n + 15) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fantasy-atmosphere { display: none; }
+}

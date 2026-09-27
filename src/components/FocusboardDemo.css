@@ -1,0 +1,123 @@
+.focus-demo {
+  --focus-demo-ink: #ede8dc;
+  --focus-demo-muted: #b6b0a5;
+  --focus-demo-line: #3a3631;
+  --focus-demo-ember: #ff5938;
+  background: #161513;
+  border: 1px solid var(--focus-demo-line);
+  border-radius: 2px;
+  color: var(--focus-demo-ink);
+  color-scheme: dark;
+  font-family: inherit;
+  min-width: 0;
+  padding: 28px;
+  text-align: left;
+}
+
+.focus-demo *,
+.focus-demo *::before,
+.focus-demo *::after { box-sizing: border-box; }
+
+.focus-demo h2,
+.focus-demo h3,
+.focus-demo p { margin: 0; }
+
+.focus-demo button,
+.focus-demo input,
+.focus-demo select { font: inherit; }
+
+.focus-demo button { cursor: pointer; }
+.focus-demo button:focus-visible,
+.focus-demo input:focus-visible,
+.focus-demo select:focus-visible { outline: 2px solid var(--focus-demo-ember); outline-offset: 4px; }
+
+.focus-demo-header,
+.focus-demo-brand,
+.focus-demo-list-heading { align-items: center; display: flex; }
+.focus-demo-header { flex-wrap: wrap; gap: 14px; justify-content: space-between; }
+.focus-demo-brand { gap: 12px; min-width: 0; }
+.focus-demo-mark { align-items: center; background: var(--focus-demo-ember); border-radius: 2px; color: #101010; display: inline-flex; flex-shrink: 0; font-family: Georgia, serif; font-size: 30px; height: 46px; justify-content: center; width: 46px; }
+.focus-demo-brand h2 { color: var(--focus-demo-ink); font-family: inherit; font-size: 21px; font-weight: 650; letter-spacing: -.6px; line-height: 1.3; }
+.focus-demo-brand p { color: var(--focus-demo-muted); font-size: 12px; line-height: 1.6; margin-top: 3px; }
+.focus-demo-badge { background: #2a211c; border: 1px solid #634133; border-radius: 2px; color: #ffad91; font-size: 11px; font-weight: 600; letter-spacing: 1px; padding: 6px 9px; text-transform: uppercase; white-space: nowrap; }
+
+.focus-demo-overview { align-items: center; background: linear-gradient(120deg, #2b221b, #1b1a17); border: 1px solid #4a3930; border-left: 3px solid var(--focus-demo-ember); border-radius: 2px; display: grid; gap: 22px; grid-template-columns: minmax(0, 1fr) 150px; margin: 24px 0; padding: 23px; }
+.focus-demo-eyebrow { color: #e8a58c; font-size: 11px; font-weight: 600; letter-spacing: 1.7px; line-height: 1.5; }
+.focus-demo-overview h3 { color: var(--focus-demo-ink); font-family: Georgia, 'Times New Roman', serif; font-size: 26px; font-weight: 400; letter-spacing: -.5px; line-height: 1.3; margin: 8px 0; }
+.focus-demo-overview p:not(.focus-demo-eyebrow) { color: var(--focus-demo-muted); font-size: 14px; line-height: 1.7; }
+.focus-demo-progress-wrap { display: grid; gap: 10px; }
+.focus-demo-progress-label { color: #dfd6c9; font-size: 12px; font-weight: 500; }
+.focus-demo-progress { appearance: none; background: #4b3a2f; border: 0; border-radius: 0; color: var(--focus-demo-ember); display: block; height: 5px; overflow: hidden; width: 100%; }
+.focus-demo-progress::-webkit-progress-bar { background: #4b3a2f; border-radius: 0; }
+.focus-demo-progress::-webkit-progress-value { background: var(--focus-demo-ember); border-radius: 0; }
+.focus-demo-progress::-moz-progress-bar { background: var(--focus-demo-ember); border-radius: 0; }
+
+.focus-demo-form { align-items: end; display: grid; gap: 9px; grid-template-columns: minmax(0, 1fr) 115px auto; }
+.focus-demo-field { display: grid; gap: 8px; min-width: 0; }
+.focus-demo-field label { color: #c7c0b4; font-size: 12px; font-weight: 500; }
+.focus-demo-field input,
+.focus-demo-field select { background: #101010; border: 1px solid #6b6256; border-radius: 2px; color: var(--focus-demo-ink); font-size: 14px; height: 46px; min-width: 0; padding: 0 11px; width: 100%; }
+.focus-demo-field input::placeholder { color: #a49e92; opacity: 1; }
+.focus-demo-add { align-items: center; background: var(--focus-demo-ember); border: 1px solid var(--focus-demo-ember); border-radius: 2px; color: #101010; display: flex; font-size: 14px !important; font-weight: 650 !important; gap: 6px; height: 46px; justify-content: center; padding: 0 14px; white-space: nowrap; }
+.focus-demo-add:hover { background: #ff8063; border-color: #ff8063; }
+.focus-demo-add span { font-size: 21px; font-weight: 400; line-height: 1; }
+
+.focus-demo-list-heading { flex-wrap: wrap; gap: 14px; justify-content: space-between; margin: 30px 0 14px; }
+.focus-demo-list-heading h3 { color: var(--focus-demo-ink); font-family: inherit; font-size: 16px; font-weight: 600; letter-spacing: -.15px; }
+.focus-demo-list-heading h3 span { background: #302b25; border-radius: 2px; color: #c9bdac; font-size: 11px; font-weight: 500; margin-left: 7px; padding: 4px 7px; }
+.focus-demo-filters { background: #101010; border: 1px solid #37322b; border-radius: 2px; display: flex; flex-wrap: wrap; gap: 2px; padding: 3px; }
+.focus-demo-filter { background: transparent; border: 1px solid transparent; border-radius: 1px; color: var(--focus-demo-muted); font-size: 12px !important; min-height: 36px; padding: 5px 12px; }
+.focus-demo-filter[aria-pressed='true'] { background: #352920; border-color: #704432; color: #ffc1a5; }
+.focus-demo-filter:hover { color: var(--focus-demo-ink); }
+
+.focus-demo-list { list-style: none; margin: 0; padding: 0; }
+.focus-demo-task { align-items: center; border-bottom: 1px solid var(--focus-demo-line); display: flex; gap: 10px; min-height: 66px; padding: 13px 0; }
+.focus-demo-task:first-child { border-top: 1px solid var(--focus-demo-line); }
+.focus-demo-task-label { align-items: center; cursor: pointer; display: flex; flex: 1; gap: 12px; min-width: 0; position: relative; }
+.focus-demo-task-label input { height: 24px; left: 0; margin: 0; opacity: 0; position: absolute; width: 24px; }
+.focus-demo-checkbox { align-items: center; background: #101010; border: 1px solid #827565; border-radius: 2px; color: #101010; display: flex; flex-shrink: 0; font-size: 15px; font-weight: 700; height: 24px; justify-content: center; width: 24px; }
+.focus-demo-task-label input:focus-visible + .focus-demo-checkbox { outline: 2px solid var(--focus-demo-ember); outline-offset: 4px; }
+.focus-demo-task-complete .focus-demo-checkbox { background: var(--focus-demo-ember); border-color: var(--focus-demo-ember); }
+.focus-demo-task-title { color: var(--focus-demo-ink); font-size: 14px; line-height: 1.6; overflow-wrap: anywhere; }
+.focus-demo-task-complete .focus-demo-task-title { color: var(--focus-demo-muted); text-decoration: line-through; text-decoration-color: #80776a; }
+.focus-demo-category { background: #2c2721; border: 1px solid #4a4034; border-radius: 2px; color: #cebea7; font-size: 11px; line-height: 1.5; max-width: 90px; overflow-wrap: anywhere; padding: 4px 7px; }
+.focus-demo-delete { align-items: center; background: transparent; border: 0; border-radius: 2px; color: #b4a895; display: inline-flex; flex-shrink: 0; height: 40px; justify-content: center; padding: 0; width: 40px; }
+.focus-demo-delete:hover { background: #382019; color: #ff9b7e; }
+.focus-demo-empty { background: #1d1b18; border: 1px dashed #605242; border-radius: 2px; color: var(--focus-demo-muted); font-size: 14px; line-height: 1.7; padding: 26px 18px; text-align: center; }
+.focus-demo-status { color: var(--focus-demo-muted); font-size: 12px; line-height: 1.7; min-height: 38px; padding-top: 18px; }
+
+@media (max-width: 580px) {
+  .focus-demo { padding: 18px; }
+  .focus-demo-header { gap: 10px; }
+  .focus-demo-brand { gap: 9px; }
+  .focus-demo-brand h2 { font-size: 19px; }
+  .focus-demo-brand p { font-size: 11px; }
+  .focus-demo-mark { height: 40px; width: 40px; }
+  .focus-demo-badge { font-size: 11px; padding: 4px 7px; }
+  .focus-demo-overview { gap: 18px; grid-template-columns: minmax(0, 1fr); margin: 20px 0; padding: 18px; }
+  .focus-demo-overview h3 { font-size: 25px; }
+  .focus-demo-progress-wrap { gap: 8px; }
+  .focus-demo-form { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .focus-demo-title-field { grid-column: 1 / -1; }
+  .focus-demo-add { padding: 0 8px; width: 100%; }
+  .focus-demo-field input,
+  .focus-demo-field select { font-size: 16px; }
+  .focus-demo-task { column-gap: 6px; flex-wrap: wrap; }
+  .focus-demo-task-label { gap: 9px; }
+  .focus-demo-category { max-width: 68px; padding: 3px 5px; }
+}
+
+@media (max-width: 370px) {
+  .focus-demo { padding: 14px; }
+  .focus-demo-header { align-items: flex-start; flex-direction: column; }
+  .focus-demo-overview { padding: 14px; }
+  .focus-demo-category { margin-left: 33px; order: 3; }
+  .focus-demo-task-label { flex-basis: calc(100% - 46px); }
+  .focus-demo-task { row-gap: 4px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .focus-demo *,
+  .focus-demo *::before,
+  .focus-demo *::after { scroll-behavior: auto !important; transition: none !important; }
+}

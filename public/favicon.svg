@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>Arjun C N</title>
+  <rect width="64" height="64" rx="4" fill="#0d0f10" />
+  <rect x="3.5" y="3.5" width="57" height="57" rx="2" stroke="#c5a56a" stroke-opacity=".5" />
+  <path d="m9 44 10-26 10 26M13 35h12" stroke="#ede8dc" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter" />
+  <path d="M53 21c-2-2-4-3-7-3-7 0-11 5-11 13s4 13 11 13c3 0 5-1 7-3" stroke="#ede8dc" stroke-width="4" stroke-linecap="square" />
+  <path d="M9 53h46" stroke="#c5a56a" stroke-width="2" />
+</svg>

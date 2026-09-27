@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Cinzel:wght@400;500;600;700;800&family=DM+Sans:wght@400;450;500;550;600;650;700&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #eee7d8;
+  background: #0d0f10;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --paper: #eee7d8;
+  --muted: #aaa59b;
+  --line: #b59b6433;
+  --accent: #c5a56a;
+  --ember: #ad4c3c;
+  --oracle-accent: #f28b7d;
+  --oracle-red: #c74634;
+  --display: 'Cinzel', Georgia, serif;
+  --display-condensed: 'Barlow Condensed', Impact, 'Arial Narrow', sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body { margin: 0; min-width: 320px; }
+button, input, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+button { cursor: pointer; }
+a { color: inherit; }
+button:disabled { cursor: default; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
+::selection { background: var(--accent); color: #0d0f10; }
+h1, h2, h3, p { margin-top: 0; }
+svg { flex-shrink: 0; }
+img { display: block; max-width: 100%; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+html:has(.cinema-site:not(.motion-enabled)) { scroll-behavior: auto; }
